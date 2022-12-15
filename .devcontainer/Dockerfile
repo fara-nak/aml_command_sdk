@@ -8,7 +8,7 @@ FROM mcr.microsoft.com/devcontainers/miniconda:0-3
 
 FROM mcr.microsoft.com/devcontainers/miniconda:0-3
 COPY environment.yml* .devcontainer/noop.txt /tmp/conda-tmp/
-RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/conda env create -f /tmp/conda-tmp/environment.yml; fi 
+RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/conda env create -f /tmp/conda-tmp/environment.yml; fi \
 && rm -rf /tmp/conda-tmp
 
 # [Optional] Uncomment to install a different version of Python than the default
